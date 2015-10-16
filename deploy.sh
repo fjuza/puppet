@@ -16,9 +16,9 @@ if [[ $1 = "server" ]]; then
   echo "Adding phusionpassenger repo"
   curl --fail -sSLo /etc/yum.repos.d/passenger.repo https://oss-binaries.phusionpassenger.com/yum/definitions/el-passenger.repo
   echo "installing httpd, httpd-devel, mod-ssl, ruby-devel, rubygems, gcc-c++, curl-devel, zlib-devel, make, automake, openssl-devel, mod_passenger"
-  yum install httpd httpd-devel mod_ssl ruby-devel rubygems gcc-c++ curl-devel zlib-devel make automake openssl-devel mod_massenger -y -q -e 0
+  yum install epel-release httpd httpd-devel mod_ssl ruby-devel rubygems gcc-c++ curl-devel zlib-devel make automake openssl-devel mod_passenger -y -q -e 0
   #install rack
-  gem install rack
+  #gem install rack
  
   #create virtual hostfile for puppet.
   touch /etc/httpd/conf.d/puppetmaster.conf 
